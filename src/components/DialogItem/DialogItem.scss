@@ -1,0 +1,90 @@
+@import '../../styles/vars';
+
+.dialog {
+   display: flex;
+   align-items: center;
+   padding: 1rem;
+   background-color: $second-background;
+   border-radius: 1rem;
+
+   &.active {
+      background-color: white;
+      box-shadow: -1px 2px 2px -1px rgb(0 0 0 / 10%);
+   }
+   
+   &__avatar {
+      width: 5rem;
+      height: 5rem;
+      margin-right: 1.5rem;
+      position: relative;
+
+      img {
+         width: 100%;
+         height: 100%;
+         border-radius: 50%;
+         object-fit: cover;
+      }
+   }
+
+   &__online {
+      width: 1.8rem;
+      height: 1.8rem;
+      background-color: #00C980;
+      border-radius: 50%;
+      border: 4px solid white;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+   }
+
+   &__content {
+      width: 80%;
+   }
+
+   &__name {
+      font-size: 1.8rem;
+      font-weight: 600;
+   }
+
+   &__date {
+      color: lighten(black, 50%);
+      font-size: 1.4rem;
+   }
+
+   &__header, &__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__text {
+      width: 90%;
+      padding: 5px 0;
+      color: lighten(black, 50%);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+   }
+
+   &__count {
+      width: 10%;
+      max-width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+      background-color: #F46B6B;
+      border-radius: 50%;
+      color: white
+   }
+
+   &__readed {
+      width: 10%;
+      max-width: 2rem;
+    }
+
+   &:not(:last-child) {
+      margin-bottom: 3rem;
+   }
+}

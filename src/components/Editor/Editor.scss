@@ -1,0 +1,55 @@
+@import '../../styles/vars';
+
+.editor {
+   margin: 3rem 0;
+   padding: 2rem;
+   background-color: white;
+   border-radius: 1rem;
+   border: 1px solid #dbdbdb;
+
+   &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__block {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      button {
+         margin: 0 8px;
+         padding: 0;
+         border: none;
+         background-color: transparent;
+      }
+
+      input {
+         width: 100%;
+         background-color: transparent;
+         border: none;
+         padding: 0 1rem;
+         font-size: 1.8rem;
+
+         &::placeholder {
+            opacity: 0.5;
+         }
+      }
+
+      &:first-child {
+         width: -webkit-fill-available;
+      }
+   }
+
+   &__icon {
+      font-size: 2.1rem;
+      color: $gray;
+      cursor: pointer;
+      transition: color .2s linear;
+
+      &:hover, &.active {
+         color: darken($gray, 50%);
+      }
+   }
+}

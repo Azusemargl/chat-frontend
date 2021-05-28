@@ -1,0 +1,228 @@
+@import '../../styles/_vars';
+
+.message {
+  $self: &;
+
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+
+  &__content {
+    max-width: 44rem;
+    position: relative;
+  }
+
+  &__avatar {
+    width: 3.3rem;
+    height: 3.3rem;
+    margin-right: 1.3rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  &__readed {
+    width: 2rem;
+    margin-right: 1rem;
+  }
+
+  &__item {
+    margin: 0 5px;
+  }
+
+  &__bubble {
+    background-color: $blue;
+    box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.196733);
+    border-radius: 12px 12px 12px 0px;
+    padding: 1.5rem;
+    margin-bottom: 8px;
+  }
+  
+  &__text {
+    color: #fff;
+    line-height: 2rem;
+  }
+
+  &__typing {
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__audio {
+    width: 28rem;
+
+    audio {
+      display: none;
+    }
+  }
+
+  &__player-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__audio-btn {
+    button {
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0F3997;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__audio-duration {
+    span {
+      color: #fff;
+      font-weight: 500;
+      opacity: 0.5;
+    }
+  }
+
+  &__audio-progress {
+    height: 100%;
+    background-color: #5890e5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transition: width 0.3s ease;
+  }
+
+  &__attachments {
+    display: flex;
+
+    &-item {
+      cursor: pointer;
+      position: relative;
+
+      img {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 8px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &--audio {
+    #{$self}__bubble {
+      position: relative;
+      overflow: hidden;
+    }
+  }
+
+  &--isme {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    #{$self}__bubble {
+      background-color: #ffffff;
+      border: 1px solid #ececec;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.0220444);
+      border-radius: 12px 12px 0px 12px;
+      order: 2;
+      #{$self}__text {
+        color: $black;
+      }
+    }
+
+    #{$self}__avatar {
+      img {
+        margin-right: 0;
+        margin-left: 13px;
+      }
+    }
+
+    #{$self}__info {
+      display: flex;
+      align-items: center;
+      text-align: right;
+    }
+  }
+
+  &--image {
+    #{$self}__attachments-item {
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &--istyping {
+    #{$self}__bubble {
+      background-color: $message-typing-blue;
+    }
+  }
+}
+
+.dot-flashing {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: white;
+  color: white;
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: .5s;
+}
+
+.dot-flashing::before, .dot-flashing::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-flashing::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: white;
+  color: white;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+
+.dot-flashing::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: white;
+  color: white;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dotFlashing {
+  0% {
+    background-color: $message-typing-circle;
+  }
+  50%,
+  100% {
+    background-color: rgba($message-typing-circle, 0.3);
+  }
+}

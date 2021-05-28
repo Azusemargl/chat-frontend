@@ -1,0 +1,27 @@
+@import '../../styles/_vars';
+
+.status_block {
+   display: flex;
+   align-items: center;
+   color: $gray;
+}
+
+.status {
+   width: 8px;
+   height: 8px;
+   margin-right: 5px;
+   border-radius: 50%;
+
+   &__text {
+      color: lighten(black, 70%);
+      font-size: 1.2rem;
+   }
+
+   &--online {
+      background-color: #00C980;
+   }
+
+   &--offline {
+      background-color: $gray;
+   }
+}

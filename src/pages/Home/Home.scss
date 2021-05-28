@@ -1,0 +1,6 @@
+@import '../../styles/vars';
+
+.home {
+   height: calc(100% - #{$header-height} - 4rem);
+   display: flex;
+}

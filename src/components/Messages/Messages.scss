@@ -1,0 +1,70 @@
+@import '../../styles/_vars';
+
+.messages {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__header {
+    height: 5rem;
+    padding: $padding;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $background;
+    border-bottom: 1px solid $light-border;
+    position: relative;
+  }
+
+  &__header-interlocutor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__header-link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__header-name {
+    margin-left: 1rem;
+    color: darken($gray, 20%);
+    font-size: 2.1rem;
+    font-weight: 700;
+  }
+
+  &__header-settings {
+    display: flex;
+    align-items: center;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $gray;
+      transition: background-color .2s linear;
+
+      &:nth-child(2) {
+        margin: 0 5px;
+      }
+    }
+
+    &:hover, &.active {
+      span {
+        background-color: darken($gray, 50%);
+      }
+    }
+  }
+
+  &__content {
+    padding: 0 2rem 0 6rem;
+  }
+}

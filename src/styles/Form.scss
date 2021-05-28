@@ -1,0 +1,50 @@
+@import '../styles/vars';
+
+.form {
+   $self: &;
+
+   &__group {
+      margin-bottom: 2rem;
+   }
+
+   &__item {
+      position: relative;
+
+      img {
+         width: 2rem;
+         position: absolute;
+         top: 50%;
+         right: 1rem;
+         transform: translateY(-50%);
+         transition: transform;
+      }
+   }
+
+   &__field {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-bottom: 1px solid black;
+      font-size: 1.8rem;
+   }
+
+   &__error {
+      #{$self}__field {
+         border-bottom: 1px solid $red;
+      }
+   }
+
+   &__error-text {
+      display: block;
+      margin-bottom: 2rem;
+      color: $red;
+      font-size: 1.6rem;
+
+      &--field {
+         text-align: center;
+         font-weight: 500;
+         font-size: 1.8rem;
+      }
+   }
+}
